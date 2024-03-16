@@ -1,0 +1,31 @@
+# Скрипт для игры про танки на 23 февраля
+
+tank_boss = {
+    "name": "MegaTank",
+    "armor": 100,
+    "firepower": 150,
+    "health": 200,
+}
+
+player_tank = {
+    "name": "PlayerTank",
+    "armor": 80,
+    "firepower": 120,
+    "health": 100,
+}
+
+print("Вы столкнулись с самым мощным танком -", tank_boss["name"])
+print("У вашего танка -", player_tank["name"], "- есть шанс его победить!")
+
+while tank_boss["health"] > 0 and player_tank["health"] > 0:
+    # ход игрока
+    tank_boss["health"] -= player_tank["firepower"]
+    if tank_boss["health"] <= 0:
+        print("Поздравляем! Вы победили", tank_boss["name"])
+        break
+
+    # ход босса
+    player_tank["health"] -= tank_boss["firepower"]
+    if player_tank["health"] <= 0:
+        print("К сожалению, вы проиграли. ", tank_boss["name"], "оказался сильнее.")
+        break
