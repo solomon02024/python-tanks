@@ -188,3 +188,19 @@ tank = Tank(x=100, y=100)
 tank.shoot(target_x=200, target_y=200)
 tankpirov = 1000000
 print("У вас", tankpirov, "танкпиров")
+import random
+
+def april_fools_update():
+    features = ["Новый игровой режим: Танцующие таонки!",
+                "Добавлены эксклюзивные костюмы на первом ящике",
+                "Таонки теперь могут говорить!"]
+    
+    print("Поздравляем с первоапрельским обновлением игры про таонки!")
+    print("Что нового:")
+    
+    for feature in features:
+        print("- " + feature)
+    
+    print("Приятной игры!")
+
+april_fools_update()
