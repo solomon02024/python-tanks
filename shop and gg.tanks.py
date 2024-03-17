@@ -186,3 +186,5 @@ tank = Tank(x=100, y=100)
 
 # Вызов метода стрельбы танка
 tank.shoot(target_x=200, target_y=200)
+tankpirov = 1000000
+print("У вас", tankpirov, "танкпиров")
