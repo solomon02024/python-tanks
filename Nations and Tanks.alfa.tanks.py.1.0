@@ -1,0 +1,35 @@
+# Скрит для добавления1000 тан в игру про тан
+
+class Tank:
+    def __init__(self, name, health damage):
+        self = name
+       .health = health
+        self.damage = damage
+
+    def attack(self, target):
+        target.health -= self.damage
+
+ Nation:
+    def __init__(self, name, tanks):
+        self.name = name
+        self.tanks = tanks
+
+    def total_health(self):
+        return sum([tank.health for tank in self.tanks])
+
+    def average_damage(self):
+        return sum([tank.damage for tank in self.tanks]) / len(self.tanks)
+
+def main():
+    tanks_list = [
+        Tank(f"Tank{i}", 100, 20) for i in range(1, 1001)
+    ]
+
+    nation = Nation("Nation1", tanks_list)
+
+    print(f"{nation.name} Stats:")
+    print(f"Total health of all tanks: {nation.total_health()}")
+    print(f"Average damage per tank: {nation.average_damage()}")
+
+if __name__ == "__main__":
+    main()
