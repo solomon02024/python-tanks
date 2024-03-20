@@ -1,0 +1,38 @@
+# Скрипт для обновления игры про танки
+
+class Tank:
+    def __init__(self, name, health, damage):
+        self.name = name
+        self.health = health
+        self.damage = damage
+
+    def attack(self, target):
+        target.health -= self.damage
+
+class Nation:
+    def __init__(self, name, tanks):
+        self.name = name
+        self.tanks = tanks
+
+    def total_health(self):
+        return sum([tank.health for tank in self.tanks])
+
+    def average_damage(self):
+        return sum([tank.damage for tank in self.tanks]) / len(self.tanks)
+
+def main():
+    tanks_list = [
+        Tank("Tank1", 100, 20),
+        Tank("Tank2", 120, 25),
+        Tank("Tank3", 90, 18),
+    ]
+
+    nation = Nation("Nation1", tanks_list)
+
+    print(f"{nation.name} Stats:")
+    print(f"Total health of all tanks: {nation.total_health()}")
+    print(f"Average damage per tank: {nation.average_damage()}")
+
+if __name__ == "__main__":
+    main()
+
